@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+        <title>BombEditor</title>
+
+        <script src="eruda.js"></script>
+
+        <link rel="stylesheet" href="editor.css">
+        <link rel="stylesheet" href="editor_good.css">
+        <!-- <link rel="stylesheet" href="debug_style.css"> -->
+    </head>
+
+    <body>
+        <div class="hidden_abs">
+            <div class="simple-textbox" id="simple_textbox_hidden">
+                <span class="simple-textbox-title">id:</span>
+                <input type="text" value="new_slider_id">
+            </div>
+
+            <div class="simple-checkbox" id="simple_checkbox_hidden">
+                <input type="checkbox" name="sync">
+                <label for="sync">sync</label>
+            </div>
+
+            <div class="simple-expandable-list" id="simple_expandable_list_hidden">
+                <div class="simple-button">+ option</div>
+            </div>
+
+            <div class="simple-slider" id="simple_slider_hidden">
+                <label></label>
+                <input type="range" class="simple-slider-input" min="0" max="100" value="10">
+                <div class="simple-slider-labels">
+                    <div class="simple-slider-min">0</div>
+                    <div class="simple-slider-max">100</div>
+                </div>
+                <span class="simple-slider-value">0</span>
+            </div>
+
+            <div class="scrollable-container-element" id="generic_element_hidden" draggable="true"></div>
+
+            <div class="editor-page-buttons" id="editor_page_buttons_hidden">
+                <div class="simple-button">+ button</div>
+                <div class="simple-button">+ slider</div>
+                <div class="simple-button">+ radio buttons</div>
+                <div class="simple-button">+ checkbox</div>
+                <div class="simple-button">+ analog-stick</div>
+                <div class="simple-button">+ d-pad</div>
+            </div>
+
+            <div class="editor-page-buttons" id="scrollable_container_element_buttons_hidden">
+                <div class="simple-button">+ button</div>
+                <div class="simple-button">+ slider</div>
+                <div class="simple-button">+ radio buttons</div>
+                <div class="simple-button">+ checkbox</div>
+            </div>
+
+            <div class="editor-page-section" id="editor_page_section_hidden" draggable="true">
+                <div class="editor-page-section-header">
+                    <span class="editor-page-section-header-arrow">▶</span>
+                    <span class="editor-page-section-header-title">Header section of hidden page</span>
+                    <span class="editor-page-section-cross">&times;</span>
+                </div>
+                <div class="editor-page-section-content">
+
+                </div>
+            </div>
+
+            <div class="scrollable-container-element" id="analog_stick_hidden">
+                <div>Analog Stick</div>
+                <div class="simple-textbox">
+                    <span class="simple-textbox-title">id:</span>
+                    <input type="text" value="new_analog_stick_id">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="tab-header">
+            <!-- T: Probably this can become directly a tab that can't be closed, for options etc... -->
+            <div class="tab controller-tab selected" draggable="true" data-page_id="page_0">
+                <span class="tab-title">Begin</span>
+                <span class="close-tab">&times;</span>
+            </div>
+            <div id="new-tab">+</div>
+        </div>
+
+        <div id="pages-div">
+
+            <!-- T: This is hidden and can be used to easily create new editor page for controllers -->
+            <div class="editor-page hidden_abs" id="page_hidden">
+
+                <div class="editor-page-body">
+                    <div class="editor-fields">
+                        <div class="editor-page-buttons">
+                            <div class="simple-button">+ button</div>
+                            <div class="simple-button">+ slider</div>
+                            <div class="simple-button">+ radio buttons</div>
+                            <div class="simple-button">+ checkbox</div>
+                            <div class="simple-button">+ analog-stick</div>
+                            <div class="simple-button">+ d-pad</div>
+                        </div>
+
+                        <div class="editor-page-section">
+                            <div class="editor-page-section-header open">
+                                <span class="editor-page-section-header-arrow open">▶</span>
+                                <span class="editor-page-section-header-title">Settings</span>
+                            </div>
+                            <div class="editor-page-section-content open">
+                                <div class="simple-checkbox">
+                                    <input type="checkbox" name="device_orientation">
+                                    <label for="device_orientation">capture device orientation</label>
+                                </div>
+
+                                <div class="simple-checkbox">
+                                    <input type="checkbox" name="device_motion" checked>
+                                    <label for="device_motion">capture device motion</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>Controller Content</div>
+                        <div class="editor-page-controller-content">
+
+                        </div>
+                    </div>
+                    <div class="editor-simulator">
+                        <div class="editor-simulator-phone">
+                            <div class="editor-simulator-phone-frame-container">
+                                <iframe class="editor-simulator-phone-frame" src="test_perfect_placement.html"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="editor-page selected" id="page_0">
+                <div>Begin</div>
+                <div class="simple-button" id="save_project">Save project</div>
+                <div class="simple-button" id="import_project">Import project</div>
+                <input type="file" id="import_project_input" accept=".json" style="display: none;">
+                <div class="simple-button" id="export_html">Export html</div>
+                <div class="simple-button" id="update_simulator">Update Simulator</div>
+            </div>
+        </div>
+
+        <script type="module" src="editor.js"></script>
+    </body>
+</html>
