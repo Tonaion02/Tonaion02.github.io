@@ -1,0 +1,119 @@
+/* 
+  High-Contrast Grayscale Theme Override
+  Palette Hierarchy:
+  - Base/Backgrounds: #121214 (App), #18181b (Page/Container)
+  - Containers & Bars: #202023, #27272a, #2e2e33
+  - Headers & Controls: #3f3f46, #52525b
+  - Muted Text & Borders: #71717a, #a1a1aa
+  - Selected / Active States: #d4d4d8 (Light Gray)
+  - Highlights & White Text: #ffffff
+*/
+
+body {
+    background-color: #121214;
+    color: #f4f4f5;
+}
+
+/* T: Tabs (START) */
+#tab-header {
+    background-color: #18181b;
+}
+
+.tab {
+    background-color: #27272a;
+    color: #a1a1aa;
+    border-color: #3f3f46;
+}
+
+.tab:hover {
+    background-color: #3f3f46;
+    color: #ffffff;
+}
+
+.tab.controller-tab {
+    background-color: #52525b;
+    color: #ffffff;
+}
+
+.tab.controller-tab.selected {
+    background-color: #d4d4d8;
+    color: #18181b;
+}
+
+.tab.controller-tab.highlight_side {
+    border-left-color: #ffffff;
+}
+
+.tab.controller-tab.right_highlight_side {
+    border-right-color: #ffffff;
+}
+
+.close-tab:hover {
+    background-color: #71717a;
+    color: #ffffff;
+}
+
+#new-tab:hover {
+    background-color: #3f3f46;
+    color: #ffffff;
+}
+/* T: Tabs (END) */
+
+/* T: Editor Pages (START) */
+#pages-div {
+    background-color: #18181b;
+    color: #e4e4e7;
+}
+
+.editor-simulator {
+    background-color: #3f3f46;
+}
+
+.editor-fields {
+    background-color: #18181b;
+}
+
+.editor-page-buttons {
+    background-color: #27272a;
+}
+
+.editor-page-section {
+    background-color: #202023;
+}
+
+.editor-page-section.top_highligth {
+    border-top-color: #ffffff;
+}
+
+.editor-page-section-header {
+    background-color: #3f3f46;
+}
+
+.editor-page-section-header-arrow {
+    color: #a1a1aa;
+}
+
+.editor-page-section-header-arrow.open {
+    color: #ffffff;
+}
+
+.editor-page-section-cross:hover {
+    background-color: #71717a;
+    color: #ffffff;
+}
+
+.scrollable-container-element {
+    background-color: #2e2e33;
+}
+
+.scrollable-container-element.top_highligth {
+    border-top-color: #ffffff;
+}
+/* T: Editor Pages (END) */
+
+/* T: Simple elements (START) */
+.simple-button {
+    background-color: #52525b;
+    color: #ffffff;
+}
+/* T: Simple elements (END) */
