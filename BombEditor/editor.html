@@ -6,8 +6,6 @@
 
         <title>BombEditor</title>
 
-        <script src="eruda.js"></script>
-
         <link rel="stylesheet" href="editor.css">
         <link rel="stylesheet" href="editor_good.css">
         <!-- <link rel="stylesheet" href="debug_style.css"> -->
@@ -40,6 +38,10 @@
             </div>
 
             <div class="scrollable-container-element" id="generic_element_hidden" draggable="true"></div>
+            <div class="scrollable-container-element-title" id="title_generic_element_hidden">
+                <span></span>
+                <span class="cross-scrollable-container-element" id="cross_generic_element_hidden">&times;</span>
+            </div>
 
             <div class="editor-page-buttons" id="editor_page_buttons_hidden">
                 <div class="simple-button">+ button</div>
@@ -81,7 +83,7 @@
 
         <div id="tab-header">
             <!-- T: Probably this can become directly a tab that can't be closed, for options etc... -->
-            <div class="tab controller-tab selected" draggable="true" data-page_id="page_0">
+            <div class="tab controller-tab selected" draggable="true" title="Begin page" data-page_id="page_0">
                 <span class="tab-title">Begin</span>
                 <span class="close-tab">&times;</span>
             </div>
@@ -129,8 +131,10 @@
                     </div>
                     <div class="editor-simulator">
                         <div class="editor-simulator-phone">
-                            <div class="editor-simulator-phone-frame-container">
-                                <iframe class="editor-simulator-phone-frame" src="test_perfect_placement.html"></iframe>
+                            <div class="editor-simulator-phone-frame-borders">
+                                <div class="editor-simulator-phone-frame-container">
+                                    <iframe class="editor-simulator-phone-frame" src="test_perfect_placement.html"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>

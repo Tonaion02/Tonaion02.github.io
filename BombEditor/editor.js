@@ -1,13 +1,8 @@
-// T: TODO Fix how phone is displayed in the simulator.
 // T: TODO Investigate the incorrect use of "for" property of label
 // T: TODO Remove animations from highligh side
 // T: TODO Add on the top the possibiltiy to specify a name for the project?
-// T: TODO Add a real beginning section
+// T: TODO Write a real beginning section
 // T: TODO Add a section where you can manage projects, files...
-// T: TODO I think it's necessary to add a transition for the section when it's closed and when it's opened.
-// T: TODO Add an image of an analog stick in sections dedicated to it
-// T: TODO Probably it's better to put scrolling on y-axis in Controller Content, so the rest of the 
-// UI will be remain fixed where it is.
 // T: TODO I think that is necessary to substitute some target.closest with currentTarget... search for them
 
 import { Vector2 } from './vector2.js';
@@ -34,6 +29,8 @@ const CONST = {
     dpad_hidden_id: "dpad_hidden",
     editor_page_buttons_id: "editor_page_buttons_hidden",
     scrollable_container_element_buttons_id: "scrollable_container_element_buttons_hidden",
+    generic_element_title_id: "title_generic_element_hidden",
+    cross_generic_element_id: "cross_generic_element_hidden",
 
     simple_textbox_id: "simple_textbox_hidden",
     simple_checkbox_id: "simple_checkbox_hidden",
@@ -181,6 +178,12 @@ class PROJECT {
 
                 x:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "100" },
                 y:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "101" },
+                size:               { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "20", min: "0", max: "100" },
+            },
+
+            properties:
+            {
+
             },
         };
 
@@ -205,8 +208,17 @@ class PROJECT {
                 "min value":        { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "0" },
                 "max value":        { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "100" },
                 "default value":    { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "0" },
-                sync:               { type: this.TYPES_FIELD.SIMPLE_CHECKBOX,   value: "true" }
-            }
+                sync:               { type: this.TYPES_FIELD.SIMPLE_CHECKBOX,   value: "true" },
+
+                x:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "100" },
+                y:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "101" },
+                size:               { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "20", min: "0", max: "100" },
+            },
+
+            properties:
+            {
+                "aspect-ratio":     "2/1",
+            },
         };
 
         return new_el_id;
@@ -228,8 +240,17 @@ class PROJECT {
                 id:                 { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "new_checkbox_id" },
                 "text displayed":   { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "new_checkbox" },
                 "default value":    { type: this.TYPES_FIELD.SIMPLE_CHECKBOX,   value: "true" },
-                sync:               { type: this.TYPES_FIELD.SIMPLE_CHECKBOX,   value: "true" }
-            }
+                sync:               { type: this.TYPES_FIELD.SIMPLE_CHECKBOX,   value: "true" },
+
+                x:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "100" },
+                y:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "101" },
+                size:               { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "20", min: "0", max: "100" },
+            },
+
+            properties:
+            {
+
+            },
         };
 
         return new_el_id;
@@ -249,7 +270,16 @@ class PROJECT {
             fields:
             {
                 id:                 { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "new_slider_id" },
-            }
+
+                x:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "100" },
+                y:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "101" },
+                size:               { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "20", min: "0", max: "100" },
+            },
+
+            properties:
+            {
+
+            },
         };
 
         return new_el_id;
@@ -272,7 +302,16 @@ class PROJECT {
                 right:              { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "right_id", text_displayed: "▶" },
                 down:               { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "down_id", text_displayed: "▼" },
                 left:               { type: this.TYPES_FIELD.SIMPLE_TEXT,       value: "left_id", text_displayed: "◀" },
-            }
+
+                x:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "100" },
+                y:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "101" },
+                size:               { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "20", min: "0", max: "100" },
+            },
+
+            properties:
+            {
+
+            },
         };
 
         return new_el_id;
@@ -294,7 +333,16 @@ class PROJECT {
                 id:                 { type: this.TYPES_FIELD.SIMPLE_TEXT, value: "new_radio_button_id" },
                 name:               { type: this.TYPES_FIELD.SIMPLE_TEXT, value: "new_radio_button" },
                 options:            { type: this.TYPES_FIELD.SIMPLE_EXPANDABLE_LIST, value: [ "option_1", "option_2" ] },
-            }
+
+                x:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "100" },
+                y:                  { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "0", min: "0", max: "101" },
+                size:               { type: this.TYPES_FIELD.SIMPLE_SLIDER, value: "20", min: "0", max: "100" },
+            },
+
+            properties:
+            {
+
+            },
         };
 
         return new_el_id;
@@ -428,6 +476,16 @@ class PROJECT {
         {
             const field_name = html_field.dataset.field_name;
 
+            // T: Skip if the element isn't a field
+            if (! Object.hasOwn(html_field.dataset, "type"))
+            {
+                // T: DEBUG
+                console.log("Skipped:");
+                console.log(html_field);
+
+                continue;
+            }
+
             // T: TODO On this big if-else is where we are failing in my mind, it's not really
             // right for me that we are relying on this classes to retrieve what category is
             // the html field and so what to do. I think also that is wrong to rely on how
@@ -484,8 +542,10 @@ class PROJECT {
     // the project so that can be runned.
     static export(minimized)
     {
+        const files = [];
+
         const controllers = this.CURRENT_PROJ.controllers;
-        let html_text = "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover\"><title>BombTest</title><script src=\"eruda.js\"></script><link rel=\"stylesheet\" href=\"test_perfect_placement.css\"></head><body><div class=\"controller-viewport\">";
+        // let html_text = "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover\"><title>BombTest</title><script src=\"eruda.js\"></script><link rel=\"stylesheet\" href=\"test_perfect_placement.css\"></head><body><div class=\"controller-viewport\">";
         // let css_text = "body,html{width:100%;height:100%}.controller-viewport{position:fixed;inset:0;width:100dvw;height:100dvh;overflow:hidden;touch-action:none;box-sizing:border-box;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);padding-left:env(safe-area-inset-left,0);padding-right:env(safe-area-inset-right,0);background-color:#00f}.control-element{position:absolute;width:auto;aspect-ratio:1/1;background-color:brown}\n";
         let css_text = `
             body, html {
@@ -493,37 +553,38 @@ class PROJECT {
                 height: 100%;
                 margin: 0;
                 padding: 0;
-                background-color: #000000; /* Phone screen bezel/outer background */
+                background-color: #000000; /* Hardware bezel area behind safe inset */
             }
 
+            /* 1. Fullscreen container (background bleeds edge-to-edge) */
             .controller-viewport {
                 position: absolute;
-                /* Inset the viewport away from the rounded corners */
-                top: env(safe-area-inset-top, 12px);
-                bottom: env(safe-area-inset-bottom, 12px);
-                left: env(safe-area-inset-left, 24px);
-                right: env(safe-area-inset-right, 24px);
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #0000ff; /* Fills screen completely with no black borders */
                 overflow: hidden;
                 touch-action: none;
-                box-sizing: border-box;
-                background-color: #0000ff;
             }
 
+            /* 2. Controls calculate positions inside safe boundaries */
             .control-element {
                 position: absolute;
                 width: auto;
-                aspect-ratio: 1 / 1;
                 background-color: brown;
             }
         `.replace(/\s+/g, " ");
 
-
-
         for(const [controller_name, controller] of Object.entries(controllers))
         {
+            let html_text = `<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover\"><title>BombTest</title><script src=\"eruda.js\"></script><link rel=\"stylesheet\" href=\"${controller_name}.css\"></head><body><div class=\"controller-viewport\">`;
+
             // T: DEBUG
             console.log(`controller_name=${controller_name}`);
             console.log(controller);
+
+            let html_file = html_text;
+            let css_file = css_text;
 
             for(const [group_name, group] of Object.entries(controller.groups))
             {
@@ -540,31 +601,40 @@ class PROJECT {
                     let html_element;
                     let css_element;
 
+                    let aspect_ratio = "1/1";
+                    if (Object.hasOwn(element.properties, "aspect-ratio"))
+                    {
+                        // T: DEBUG
+                        console.log("different aspect-ratio");
+
+                        aspect_ratio = element.properties["aspect-ratio"];
+                    }
+
+
                     if (minimized)
                     {
                         html_element = `<div class=\"control-element\" id=\"${element_name}\"></div>`;
-                        // let css_element = `#${element_name}{left:;top:;height:vmin;}`;
-                        // let css_element = `#${element_name}{left:8%;top:50%;height:20vmin;}`;
-                        css_element = `#${element_name}{left:${element.fields.x.value}%;top:${element.fields.y.value}%;height:20vmin;}`;
+                        // css_element = `#${element_name}{left:${element.fields.x.value}%;top:${element.fields.y.value}%;height:20vmin;}`;
+                        css_element = `#${element_name}{left:${element.fields.x.value}%;top:${element.fields.y.value}%;height:${element.fields.size.value}vmin;aspect-ratio:${aspect_ratio};}`;
                     }
                     else
                     {
                         html_element = `<div class=\"control-element\" id=\"${element_name}\"></div>`;
-                        // let css_element = `#${element_name}{left:;top:;height:vmin;}`;
-                        // let css_element = `#${element_name}{left:8%;top:50%;height:20vmin;}`;
-                        css_element = `\n#${element_name}\n{\n\tleft:${element.fields.x.value}%;\n\ttop:${element.fields.y.value}%;\n\theight:20vmin;\n}\n`;
+                        // css_element = `\n#${element_name}\n{\n\tleft:${element.fields.x.value}%;\n\ttop:${element.fields.y.value}%;\n\theight:20vmin;\n}\n`;
+                        css_element = `\n#${element_name}\n{\n\tleft:${element.fields.x.value}%;\n\ttop:${element.fields.y.value}%;\n\theight:${element.fields.size.value}vmin;\naspect-ratio:${aspect_ratio};\n}\n`;
                     }
 
-
-                    html_text += html_element;
-                    css_text += css_element;
+                    html_file += html_element;
+                    css_file += css_element;
                 }
             }
+
+            html_file += "</div></body></html>";
+
+            files.push([controller_name, html_file, css_file]);
         }
 
-        html_text += "</div></body></html>";
-
-        return [html_text, css_text];
+        return files;
     }
 
     static import_project(project_json)
@@ -772,6 +842,11 @@ function create_tab2(controller_id)
     const tab_header_div = document.getElementById(CONST.tab_header_id);
     const new_tab = tab_header_div.children[0].cloneNode(true);
     new_tab.classList.remove("selected");
+
+    // T: TODO Probably there is the necessity to pass also the title of the tab...
+    new_tab.children[0].textContent = controller_id;
+    new_tab.title = controller_id;
+
     const new_button = tab_header_div.children[tab_header_div.children.length - 1];
     tab_header_div.insertBefore(new_tab, new_button);
 
@@ -1221,11 +1296,58 @@ function next_section()
     return "section_" + UI.next_section;
 }
 
+function on_cross_generic_element(event)
+{
+    // T: DEBUG
+    console.log(event);
+    console.log("on_cross_generic_element");
+}
+
 function create_element(controller_id, group_id, el_id, type_element, section)
 {
     const html_element = document.getElementById("generic_element_hidden").cloneNode(true);
 
     html_element.id = el_id;
+
+    // T: Append title and cross to the generic element (START)
+    const title_generic_element = document.getElementById(CONST.generic_element_title_id).cloneNode(true);
+    const title_text_generic_element = title_generic_element.children[0];
+    const cross_generic_element = title_generic_element.children[1];
+    html_element.appendChild(title_generic_element);
+    cross_generic_element.addEventListener("click", on_cross_generic_element);
+
+    // T: TODO Probably all of this can be solved adding a field directly to the element in the JSON (START)
+    if (type_element == PROJECT.TYPES.BUTTON)
+    {
+        title_text_generic_element.textContent = "Button";
+    }
+    else if (type_element == PROJECT.TYPES.SLIDER)
+    {
+        title_text_generic_element.textContent = "Slider";
+    }
+    else if (type_element == PROJECT.TYPES.CHECKBOX)
+    {
+        title_text_generic_element.textContent = "Checkbox";
+    }
+    else if (type_element == PROJECT.TYPES.RADIO_BUTTON)
+    {
+        title_text_generic_element.textContent = "Radio button";
+    }
+    else if (type_element == PROJECT.TYPES.DPAD)
+    {
+        title_text_generic_element.textContent = "Dpad";
+    }
+    else if (type_element == PROJECT.TYPES.ANALOG_STICK)
+    {
+        title_text_generic_element.textContent = "Analog stick";
+    }
+    else
+    {
+        // T: DEBUG
+        console.log("Not handled type_element: ", type_element);
+    }
+    // T: TODO Probably all of this can be solved adding a field directly to the element in the JSON (END)
+    // T: Append title and cross to the generic element (END)
 
     const controller = PROJECT.CURRENT_PROJ.controllers[controller_id];
     const group = controller.groups[group_id];
@@ -1265,6 +1387,9 @@ function create_element(controller_id, group_id, el_id, type_element, section)
 
             text_field.addEventListener("change", (event) => {
                 PROJECT.update(controller_id, group_id, el_id);
+
+                // T: OPT It's necessary to optimize this function
+                render_simulator_phone();
             });
         }
         else if (field.type == PROJECT.TYPES_FIELD.SIMPLE_CHECKBOX)
@@ -1290,6 +1415,9 @@ function create_element(controller_id, group_id, el_id, type_element, section)
 
             input.addEventListener("change", (event) => {
                 PROJECT.update(controller_id, group_id, el_id);
+
+                // T: OPT It's necessary to optimize this function
+                render_simulator_phone();
             });
         }
         // T: TODO Add the possibility to specify for the slider all the other properties: min, max, etc.
@@ -1349,6 +1477,9 @@ function create_element(controller_id, group_id, el_id, type_element, section)
                 span_value.textContent = input.value;
 
                 PROJECT.update(controller_id, group_id, el_id);
+
+                // T: OPT It's necessary to optimize this function
+                render_simulator_phone();
             });
         }
         // T: TODO I need to re-made that... now it's too simple...
@@ -1370,6 +1501,9 @@ function create_element(controller_id, group_id, el_id, type_element, section)
             more_option.addEventListener("click", new_option_button);
             more_option.addEventListener("click", (event) => {
                 PROJECT.update(controller_id, group_id, el_id);
+
+                // T: OPT It's necessary to optimize this function
+                render_simulator_phone();
             });
         }
         else
@@ -1496,6 +1630,9 @@ function new_element_new_section(type_el)
 
     const controller_content = UI.current_page.querySelector("." + CONST.controller_content_class);
     controller_content.appendChild(section);
+
+    // T: OPT It's necessary to optimize this function
+    render_simulator_phone();
 }
 
 // T: This is used to add more option to radio buttons
@@ -1551,6 +1688,9 @@ function new_element(type_el, event)
     const new_html_el = create_element(UI.current_page.id, section.id, new_el_id, type_el, section);
 
     current_section_content.appendChild(new_html_el);
+
+    // T: OPT It's necessary to optimize this function
+    render_simulator_phone();
 }
 
 function new_button(event)
@@ -1603,28 +1743,35 @@ function new_radio_buttons_section(event)
     new_element(PROJECT.TYPES.RADIO_BUTTON, event);
 }
 
-// T: OPT This function is very very slow, we can easily make something better...
+// T: OPT This function is really slow. Pratically it need to re-write the entirety
+// of html and css files for the virtual controller, then the result is charged 
+// in the Iframe, and this is done even if we changed a little detail of the controller.
+// We need to evaluate how much is slow, and how much is difficult to optimize this function.
+// Probably, only updating the edited virtual controllers is enough to not create problems
+// for performances.
 function render_simulator_phone()
 {
-    const iframe_content = PROJECT.export(false);
+    const iframes_content = PROJECT.export(false);
 
-    // T: TODO The fixed id of the controller is only temporary...
-    const iframe = document.getElementById(CONST.editor_simulator_phone_frame_id + "controller_0");
+    for (const iframe_content of iframes_content)
+    {
+        const controller_id = iframe_content[0];
+        const html_file = iframe_content[1];
+        const css_file = iframe_content[2];
 
-    // T: DEBUG
-    // console.log(CONST.editor_simulator_phone_frame_id + UI.current_page.id);
-    console.log(iframe);
+        const iframe = document.getElementById(CONST.editor_simulator_phone_frame_id + controller_id);
 
-    const html_text = iframe_content[0];
-    const css_text  = iframe_content[1];
+        // T: DEBUG
+        console.log(iframe);
 
-    const full_document = html_text.replace(
-        "</head>",
-        `<style>\n${css_text}\n</style>\n</head>`
-    );
+        const full_doc = html_file.replace(
+            "</head>",
+            `<style>\n${css_file}\n</style>\n</head>`
+        );
 
-    // 3. Directly update the iframe content
-    iframe.srcdoc = full_document;
+        // T: Directly update the iframe content
+        iframe.srcdoc = full_doc;
+    }
 }
 
 function save_project(event)
@@ -1663,26 +1810,30 @@ async function import_project(event)
     {
         const json_text = await file.text();
 
-        // T: TODO Reset the editor (START)
+        // T: Reset the editor (START)
         const tab_header_div = document.getElementById(CONST.tab_header_id);
+        const tabs_to_remove = [];
+
         for(const tab of tab_header_div.children)
         {
             if (tab.id != CONST.new_tab_id && tab.dataset.page_id != "page_0")
             {
-                tab.remove();
+                tabs_to_remove.push(tab);
             }
         }
 
-        const pages_div = document.getElementById(CONST.pages_div_id);
-        for (const page of pages_div.children)
+        // T: DEBUG
+        console.log(tabs_to_remove);
+
+        for (const tab_to_remove of tabs_to_remove)
         {
-            // T: Don't remove the begin section
-            if(page.id != "page_0" && page.id != "page_hidden")
-            {
-                page.remove();
-            }
+            const page_to_remove = document.getElementById(tab_to_remove.dataset.page_id);
+
+            page_to_remove.remove();
+
+            tab_to_remove.remove();
         }
-        // T: TODO Reset the editor (END)
+        // T: Reset the editor (END)
 
         PROJECT.import_project(json_text);
 
@@ -1705,40 +1856,45 @@ function export_html(event)
     console.log("export_html");
 
     const exported_project = PROJECT.export(false);
-    const html_text     = exported_project[0];
-    const css_text      = exported_project[1];
+
+    for(const exported_controller of exported_project)
+    {
+        const controller_id = exported_controller[0];
+        const html_text = exported_controller[1];
+        const css_text = exported_controller[2];
 
 
 
-    const blob = new Blob([html_text], { type: "text/html;charset=utf-8" });
+        const blob = new Blob([html_text], { type: "text/html;charset=utf-8" });
 
-    const url = URL.createObjectURL(blob);
+        const url = URL.createObjectURL(blob);
 
-    let a = document.createElement("a");
-    a.href = url;
-    a.download = "test_perfect_placement.html";
+        let a = document.createElement("a");
+        a.href = url;
+        a.download = `${controller_id}.html`;
 
-    document.body.appendChild(a);
-    a.click();
+        document.body.appendChild(a);
+        a.click();
 
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
 
 
 
-    const blob2 = new Blob([css_text], { type: "text/css;charset=utf-8" });
+        const blob2 = new Blob([css_text], { type: "text/css;charset=utf-8" });
 
-    const url2 = URL.createObjectURL(blob2);
+        const url2 = URL.createObjectURL(blob2);
 
-    a = document.createElement("a");
-    a.href = url2;
-    a.download = "test_perfect_placement.css";
+        a = document.createElement("a");
+        a.href = url2;
+        a.download = `${controller_id}.css`;
 
-    document.body.appendChild(a);
-    a.click();
+        document.body.appendChild(a);
+        a.click();
 
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
 }
 
 function setup_ui()
@@ -1809,3 +1965,27 @@ function on_dom_content_loaded()
 }
 
 document.addEventListener("DOMContentLoaded", on_dom_content_loaded);
+
+
+
+
+
+// T: TODO Temporary code (START)
+function debug_content_iframe()
+{
+    const iframe = document.getElementById("editor_simulator_phone_frame_controller_0");
+
+    // T: DEBUG
+    console.log(iframe);
+
+    const iframe_doc = iframe.contentDocument || iframe.contentWindow.document;
+
+    // T: DEBUG
+    console.log(iframe_doc);
+
+    const el = iframe_doc.getElementById("el_0");
+    console.log(el);
+}
+
+window.debug_content_iframe = debug_content_iframe;
+// T: TODO Temporary code (END)
