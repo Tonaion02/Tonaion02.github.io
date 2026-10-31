@@ -36,7 +36,7 @@ jobs:
         with:
           # Path to your HTML/CSS/JS files. 
           # Use '.' if index.html is in the root directory, or './public' if in a subdirectory.
-          path: './BombEditor'
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
